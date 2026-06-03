@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calendar, Users, Search } from 'lucide-react';
+import { Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';

@@ -45,8 +45,8 @@ export function RoomManagement() {
       storage.set('rooms', updated);
     } else {
       const newRoom: Room = {
-        id: `R${String(rooms.length + 1).padStart(3, '0')}`,
-        ...formData as Room
+        ...(formData as Room),
+        id: `R${String(rooms.length + 1).padStart(3, '0')}`
       };
       const updated = [...rooms, newRoom];
       setRooms(updated);

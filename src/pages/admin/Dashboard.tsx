@@ -1,9 +1,8 @@
-import { Bed, Calendar, DollarSign, Users, TrendingUp, TrendingDown } from 'lucide-react';
+import { Bed, Calendar, DollarSign, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { rooms } from '@/data/rooms';
 import { bookings } from '@/data/bookings';
-import { users } from '@/data/users';
 import { revenueData } from '@/data/revenue';
 
 export function AdminDashboard() {
@@ -14,7 +13,6 @@ export function AdminDashboard() {
   
   const activeBookings = bookings.filter(b => b.status === 'confirmed' || b.status === 'checked-in').length;
   const totalRevenue = revenueData.reduce((acc, curr) => acc + curr.revenue, 0);
-  const customers = users.filter(u => u.role === 'customer').length;
 
   const roomOccupancyData = [
     { name: 'Available', value: availableRooms, color: '#10b981' },
